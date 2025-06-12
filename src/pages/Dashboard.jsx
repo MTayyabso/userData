@@ -10,7 +10,7 @@ const Dashboard = () => {
   const [editingUser, setEditingUser] = useState(null); 
   const usersPerPage = 5; 
 
-  // Load users from localStorage on component mount
+  // Load users from localStorage 
   useEffect(() => {
     const savedUsers = JSON.parse(localStorage.getItem("users")) || [];
     setUsers(savedUsers);
@@ -26,7 +26,7 @@ const Dashboard = () => {
     const emailExists = users.some(
       (u) =>
         u.email === user.email &&
-        (editingUser || u.id == editingUser.id) // Exclude current editing user
+        (editingUser || u.id == editingUser.id) 
     );
 
     if (emailExists) {
