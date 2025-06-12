@@ -26,7 +26,7 @@ const Dashboard = () => {
     const emailExists = users.some(
       (u) =>
         u.email === user.email &&
-        (editingUser || u.id == editingUser.id) 
+        (!editingUser || u.id == !editingUser.id) 
     );
 
     if (emailExists) {
